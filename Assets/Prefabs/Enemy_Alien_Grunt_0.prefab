@@ -111,8 +111,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3788833613064015336}
+  - component: {fileID: 4457914396089398567}
   m_Layer: 0
-  m_Name: Enemy_Alien_Grunt_1
+  m_Name: Enemy_Alien_Grunt_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,3 +134,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4457914396089398567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3788833613064015334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8094855cb5429eb46b4d535bf1e06c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveConfig: {fileID: 11400000, guid: 1e158c58e29895f48ab4764d2174603a, type: 2}
