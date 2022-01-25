@@ -19,6 +19,12 @@ public class Shooter : MonoBehaviour
     [HideInInspector] public bool isFiring;
 
     Coroutine fireCoroutine;
+    AudioPlayer audioPlayer;
+
+    void Awake()
+    {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
 
     void Start()
     {
@@ -62,6 +68,9 @@ public class Shooter : MonoBehaviour
             
             //Destroy it after 5 seconds and repeat after the fire rate time has passed
             Destroy(instance, projectileLifeTime);
+
+            //Play the laser SFX
+            audioPlayer.PlayLaserSFX();
             yield return new WaitForSeconds(SetRandomFiringRate());
         }
     }
