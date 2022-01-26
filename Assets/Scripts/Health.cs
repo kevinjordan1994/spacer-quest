@@ -5,16 +5,19 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] int health = 50;
+    [SerializeField] int moneyValue = 0;
     [SerializeField] ParticleSystem hitEffect;
     [SerializeField] bool applyCameraShake = false;
 
     CameraShake cameraShake;
     AudioPlayer audioPlayer;
+    ScoreKeeper scoreKeeper;
 
     void Awake()
     {
         cameraShake = Camera.main.GetComponent<CameraShake>();
         audioPlayer = FindObjectOfType<AudioPlayer>();
+        scoreKeeper = FindObjectOfType<ScoreKeeper>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -35,6 +38,7 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             audioPlayer.PlayExplosionSFX();
+            scoreKeeper.AddToMoneyAmount(moneyValue);
             Destroy(gameObject);
         }
     }
@@ -54,5 +58,10 @@ public class Health : MonoBehaviour
         {
             cameraShake.Play();
         }
+    }
+
+    public int GetHealthAmount()
+    {
+        return health;
     }
 }
