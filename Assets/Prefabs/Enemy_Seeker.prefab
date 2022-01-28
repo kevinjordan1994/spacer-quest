@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1211715828}
   - component: {fileID: 1211715827}
   m_Layer: 6
-  m_Name: Enemy_Alien_Grunt_0_Visuals
+  m_Name: Enemy_Seeker_Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: -349488677
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6862647291292549391, guid: d0523ae85e9e75d459cb096a8e2cbe8c, type: 3}
+  m_Sprite: {fileID: 3370361542741902818, guid: 12f11f3b959c8fa46825a9a230759021, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,7 +93,7 @@ Animator:
   m_GameObject: {fileID: 1211715825}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d629e11e20fdba2408828bdd0d6af3f7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1b3b1eed233c5694181596da8cdc3efd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -116,9 +116,9 @@ GameObject:
   - component: {fileID: 5348767867459974967}
   - component: {fileID: 7369649597064794865}
   - component: {fileID: 97937970787810683}
-  - component: {fileID: 2450430430474636993}
+  - component: {fileID: 5982167471628688404}
   m_Layer: 6
-  m_Name: Enemy_Alien_Grunt_0
+  m_Name: Enemy_Seeker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,8 +200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96b41b08bcfa5d4e949ee69bc40740f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  moneyValue: 100
+  health: 30
+  moneyValue: 250
   hitEffect: {fileID: 3895329469837563322, guid: fd04fd7bbabf6f7448e9562da7924b42, type: 3}
   applyCameraShake: 0
 --- !u!114 &97937970787810683
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
---- !u!114 &2450430430474636993
+--- !u!114 &5982167471628688404
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,12 +229,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b049f903253107f4fa02abc71f8cae42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 4373723557918846609, guid: b5a511794e1f79040a29ccba90a9a2b1, type: 3}
-  projectileSpeed: 10
-  projectileLifeTime: 5
-  projectileFireRate: 1
+  projectilePrefab: {fileID: 4373723557918846609, guid: fb29af6abdb50c341869d4b34cbfdf0f, type: 3}
+  projectileSpeed: 3.5
+  projectileLifeTime: 3.5
+  projectileFireRate: 3
   usingAI: 1
   projectileFireRateVariation: 0.5
-  minimumProjectileFireRate: 0.5
-  isSeeker: 0
+  minimumProjectileFireRate: 2
   isFiring: 0

@@ -89,4 +89,9 @@ public class Shooter : MonoBehaviour
             return projectileFireRate;
         }
     }
+
+    public float GetProjectileSpeed()
+    {
+        return projectileSpeed;
+    }
 }
