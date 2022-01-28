@@ -30,7 +30,7 @@ public class UIDisplay : MonoBehaviour
 
     void DisplayMoney()
     {
-        moneyText.text = "$" + money.GetMoneyAmount().ToString("00000000");
+        moneyText.text = money.GetMoneyAmount().ToString("00000000");
     }
 
     void ManageHealthSlider()

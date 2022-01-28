@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     [SerializeField] float paddingBottom;
     [SerializeField] float paddingTop;
 
+    [SerializeField] int playerDamage;
+
     Shooter shooter;
 
     void Awake()
@@ -59,5 +61,15 @@ public class Player : MonoBehaviour
         {
             shooter.isFiring = value.isPressed;
         }
+    }
+
+    public int GetPlayerDamage()
+    {
+        return playerDamage;
+    }
+
+    public void SetPlayerDamage(int value)
+    {
+        playerDamage += value;
     }
 }
