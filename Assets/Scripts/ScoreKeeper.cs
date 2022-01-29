@@ -5,12 +5,18 @@ using UnityEngine;
 public class ScoreKeeper : MonoBehaviour
 {
     [SerializeField] int money = 0;
+    [SerializeField] int rank = 0;
 
     static ScoreKeeper scoreKeeper;
 
     void Awake()
     {
         ManageSingleton();
+    }
+
+    void Update()
+    {
+        CalculateRank();
     }
 
     void ManageSingleton()
@@ -42,5 +48,38 @@ public class ScoreKeeper : MonoBehaviour
     public void ResetMoneyAmount()
     {
         money = 0;
+    }
+
+    void CalculateRank()
+    {
+        if (money < 1500)
+        {
+            rank = 0;
+        }
+
+        else if (money < 3000 && money > 1501)
+        {
+            rank = 1;
+        }
+
+        else if (money < 20000 && money > 3001)
+        {
+            rank = 2;
+        }
+
+        else if (money < 50000 && money > 20001)
+        {
+            rank = 3;
+        }
+
+        else if (money > 50000)
+        {
+            rank = 4;
+        }
+    }
+
+    public int GetRank()
+    {
+        return rank;
     }
 }
