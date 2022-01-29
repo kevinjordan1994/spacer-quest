@@ -159,6 +159,7 @@ MonoBehaviour:
   projectileSpeed: 15
   projectileLifeTime: 5
   projectileFireRate: 0.5
+  isLaser: 1
   usingAI: 0
   projectileFireRateVariation: 0
   minimumProjectileFireRate: 0

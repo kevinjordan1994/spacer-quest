@@ -12,6 +12,19 @@ public class SeekerBullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    void Start()
+    {
+        if (shooter.gameObject.name == "Enemy_Corrupted_Vessel")
+        {
+            transform.SetParent(null);
+            Destroy(gameObject, shooter.GetProjectileLifeTime());
+        }
+        else
+        {
+            FindObjectOfType<AudioPlayer>().PlaySeekerSFX();
+        }
+    }
+
     void Update()
     {
         MoveBulletTowardsTarget();

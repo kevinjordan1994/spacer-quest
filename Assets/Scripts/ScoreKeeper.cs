@@ -6,6 +6,27 @@ public class ScoreKeeper : MonoBehaviour
 {
     [SerializeField] int money = 0;
 
+    static ScoreKeeper scoreKeeper;
+
+    void Awake()
+    {
+        ManageSingleton();
+    }
+
+    void ManageSingleton()
+    {
+        if (scoreKeeper != null)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+        else
+        {
+            scoreKeeper = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     public int GetMoneyAmount()
     {
         return money;

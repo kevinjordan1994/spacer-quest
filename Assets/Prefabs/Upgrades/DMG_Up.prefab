@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -4084193166780426685}
   m_Layer: 9
   m_Name: DMG_Up
-  m_TagString: Untagged
+  m_TagString: Upgrade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

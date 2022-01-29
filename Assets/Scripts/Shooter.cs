@@ -10,6 +10,7 @@ public class Shooter : MonoBehaviour
     [SerializeField] float projectileSpeed = 15f;
     [SerializeField] float projectileLifeTime = 5f;
     [SerializeField] float projectileFireRate = 0.5f;
+    [SerializeField] bool isLaser = false;
     
     [Header("AI")]
     [SerializeField] bool usingAI;
@@ -70,7 +71,10 @@ public class Shooter : MonoBehaviour
             Destroy(instance, projectileLifeTime);
 
             //Play the laser SFX
-            audioPlayer.PlayLaserSFX();
+            if (isLaser)
+            {
+                audioPlayer.PlayLaserSFX();
+            }
             yield return new WaitForSeconds(SetRandomFiringRate());
         }
     }
@@ -93,6 +97,11 @@ public class Shooter : MonoBehaviour
     public float GetProjectileSpeed()
     {
         return projectileSpeed;
+    }
+
+    public float GetProjectileLifeTime()
+    {
+        return projectileLifeTime;
     }
 
     public void UpgradePlayerFireRate(float value)

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6996133307643637705}
   m_Layer: 9
   m_Name: MoveSpeed_Up
-  m_TagString: Untagged
+  m_TagString: Upgrade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

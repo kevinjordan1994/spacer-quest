@@ -185,9 +185,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.013418168, y: 0}
+  m_Offset: {x: -0.015642345, y: 0}
   serializedVersion: 2
-  m_Radius: 0.4120367
+  m_Radius: 0.48543334
 --- !u!114 &7369649597064794865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,10 +200,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96b41b08bcfa5d4e949ee69bc40740f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
-  moneyValue: 250
+  health: 50
+  moneyValue: 500
   hitEffect: {fileID: 3895329469837563322, guid: fd04fd7bbabf6f7448e9562da7924b42, type: 3}
   applyCameraShake: 0
+  isPlayer: 0
 --- !u!114 &97937970787810683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa325ceefd835f4bb1e10c7617239da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 40
+  isPlayerBullet: 0
 --- !u!114 &5982167471628688404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +235,7 @@ MonoBehaviour:
   projectileSpeed: 3.5
   projectileLifeTime: 3.5
   projectileFireRate: 3
+  isLaser: 0
   usingAI: 1
   projectileFireRateVariation: 0.5
   minimumProjectileFireRate: 2

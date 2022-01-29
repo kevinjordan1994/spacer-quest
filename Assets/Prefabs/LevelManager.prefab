@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuCanvas: {fileID: 0}
   howToPlayCanvas: {fileID: 0}
+  sceneLoadDelay: 2
+  musicController: {fileID: 8076841719240637682, guid: 1703e4eb04f2e744d9c57703250d053a, type: 3}

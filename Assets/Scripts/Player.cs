@@ -21,10 +21,12 @@ public class Player : MonoBehaviour
     [SerializeField] List<GameObject> weaponUpgrades;
 
     Shooter shooter;
+    AudioPlayer audioPlayer;
 
     void Awake()
     {
         shooter = GetComponent<Shooter>();
+        audioPlayer = FindObjectOfType<AudioPlayer>();
     }
 
     void Start()
@@ -37,6 +39,7 @@ public class Player : MonoBehaviour
         PlayerMovement();
     }
 
+    #region Movement
     void PlayerMovement()
     {
         Vector2 delta = rawPlayerInput * moveSpeed * Time.deltaTime;
@@ -52,7 +55,9 @@ public class Player : MonoBehaviour
         minimumBoundry = mainCamera.ViewportToWorldPoint(new Vector2(0, 0));
         maximumBoundry = mainCamera.ViewportToWorldPoint(new Vector2(1, 1));
     }
+    #endregion
 
+    #region Controls
     void OnMove(InputValue value)
     {
         rawPlayerInput = value.Get<Vector2>();
@@ -65,7 +70,9 @@ public class Player : MonoBehaviour
             shooter.isFiring = value.isPressed;
         }
     }
+    #endregion
 
+    #region Player Stats
     public int GetPlayerDamage()
     {
         return playerDamage;
@@ -87,6 +94,15 @@ public class Player : MonoBehaviour
         if (moveSpeed > 10f)
         {
             moveSpeed = 10f;
+        }
+    }
+    #endregion
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Upgrade")
+        {
+            audioPlayer.PlayUpgradeSFX();
         }
     }
 }

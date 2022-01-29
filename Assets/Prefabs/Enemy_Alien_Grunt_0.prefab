@@ -200,10 +200,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96b41b08bcfa5d4e949ee69bc40740f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 20
   moneyValue: 100
   hitEffect: {fileID: 3895329469837563322, guid: fd04fd7bbabf6f7448e9562da7924b42, type: 3}
   applyCameraShake: 0
+  isPlayer: 0
 --- !u!114 &97937970787810683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa325ceefd835f4bb1e10c7617239da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 25
+  isPlayerBullet: 0
 --- !u!114 &2450430430474636993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,11 +232,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4373723557918846609, guid: b5a511794e1f79040a29ccba90a9a2b1, type: 3}
-  projectileSpeed: 10
+  projectileSpeed: 7
   projectileLifeTime: 5
   projectileFireRate: 1
+  isLaser: 1
   usingAI: 1
   projectileFireRateVariation: 0.5
   minimumProjectileFireRate: 0.5
-  isSeeker: 0
   isFiring: 0
