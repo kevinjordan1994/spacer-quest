@@ -9,13 +9,16 @@ public class Player : MonoBehaviour
     Vector2 minimumBoundry;
     Vector2 maximumBoundry;
 
+    [Header("Movement")]
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float paddingLeft;
     [SerializeField] float paddingRight;
     [SerializeField] float paddingBottom;
     [SerializeField] float paddingTop;
 
+    [Header("Upgrades")]
     [SerializeField] int playerDamage;
+    [SerializeField] List<GameObject> weaponUpgrades;
 
     Shooter shooter;
 
@@ -71,5 +74,19 @@ public class Player : MonoBehaviour
     public void SetPlayerDamage(int value)
     {
         playerDamage += value;
+    }
+
+    public GameObject GetWeaponFromPlayerList(int index)
+    {
+        return weaponUpgrades[index];
+    }
+
+    public void AdjustMoveSpeed(float value)
+    {
+        moveSpeed += value;
+        if (moveSpeed > 10f)
+        {
+            moveSpeed = 10f;
+        }
     }
 }

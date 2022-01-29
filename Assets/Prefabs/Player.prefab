@@ -85,6 +85,10 @@ MonoBehaviour:
   paddingBottom: 2
   paddingTop: 4
   playerDamage: 10
+  weaponUpgrades:
+  - {fileID: 4373723557918846609, guid: 7bf4736dd119abc4eaf18629d07baf38, type: 3}
+  - {fileID: 6011131180712874940, guid: 1e4c609ff1e15464290f5fb16205e33c, type: 3}
+  - {fileID: 4373723557918846609, guid: 010d9377ab3b6f24abcdc0670398b09d, type: 3}
 --- !u!50 &6691870793703110489
 Rigidbody2D:
   serializedVersion: 4
@@ -138,6 +142,7 @@ MonoBehaviour:
   moneyValue: 0
   hitEffect: {fileID: 3895329469837563322, guid: fd04fd7bbabf6f7448e9562da7924b42, type: 3}
   applyCameraShake: 1
+  isPlayer: 1
 --- !u!114 &7356469340721927110
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -37,4 +37,9 @@ public class UIDisplay : MonoBehaviour
     {
         healthSlider.value = playerHealth.GetHealthAmount();
     }
+
+    public void ResetHealthSlider()
+    {
+        healthSlider.maxValue = playerHealth.GetHealthAmount();
+    }
 }

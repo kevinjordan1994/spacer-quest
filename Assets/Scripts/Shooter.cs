@@ -94,4 +94,32 @@ public class Shooter : MonoBehaviour
     {
         return projectileSpeed;
     }
+
+    public void UpgradePlayerFireRate(float value)
+    {
+        projectileFireRate -= value;
+        if (projectileFireRate < 0.1f)
+        {
+            projectileFireRate = 0.1f;
+        }
+    }
+
+    public void UpgradePlayerShotSpeed(float value)
+    {
+        projectileSpeed += value;
+        if (projectileSpeed > 40f)
+        {
+            projectileFireRate = 40f;
+        }
+    }
+
+    public GameObject GetProjectilePrefab()
+    {
+        return projectilePrefab;
+    }
+
+    public void SetProjectilePrefab(int index)
+    {
+        projectilePrefab = FindObjectOfType<Player>().GetWeaponFromPlayerList(index);
+    }
 }

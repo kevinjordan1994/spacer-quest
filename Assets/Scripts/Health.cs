@@ -8,16 +8,26 @@ public class Health : MonoBehaviour
     [SerializeField] int moneyValue = 0;
     [SerializeField] ParticleSystem hitEffect;
     [SerializeField] bool applyCameraShake = false;
+    [SerializeField] bool isPlayer = false;
+
+    int maxHealth;
 
     CameraShake cameraShake;
     AudioPlayer audioPlayer;
     ScoreKeeper scoreKeeper;
+    LevelManager levelManager;
 
     void Awake()
     {
         cameraShake = Camera.main.GetComponent<CameraShake>();
         audioPlayer = FindObjectOfType<AudioPlayer>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        levelManager = FindObjectOfType<LevelManager>();
+    }
+
+    void Start()
+    {
+        maxHealth = health;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -40,6 +50,10 @@ public class Health : MonoBehaviour
             audioPlayer.PlayExplosionSFX();
             scoreKeeper.AddToMoneyAmount(moneyValue);
             Destroy(gameObject);
+            if (isPlayer)
+            {
+                levelManager.LoadGameOver();
+            }
         }
     }
 
@@ -63,5 +77,11 @@ public class Health : MonoBehaviour
     public int GetHealthAmount()
     {
         return health;
+    }
+
+    public void SetHealthAmount(int value)
+    {
+        maxHealth += value;
+        health = maxHealth;
     }
 }
